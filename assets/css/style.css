@@ -143,6 +143,7 @@ header .wrapper {
   color: #8EB537;
   font-family: "FontAwesome";
   font-size: 12px;
+  text-indent: 0;
 }
 
 /*=================================
@@ -170,6 +171,19 @@ header .wrapper {
   text-align: center;
 }
 
+ .text-indent { text-indent: -9999px;}
+
+.scroll-btn {
+  width: 88%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translate(-50%,-50%);
+}
+
 .prev-btn::before {
   content: "\f053";
   width: 37px;
@@ -179,13 +193,12 @@ header .wrapper {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 48%;
-  left: 6%;
+  background-color: rgba(0,0,0,0.3);
   color: #fff;
   font-family: "FontAwesome";
   font-size: 18px;
-  transform: translate(0, -50%);
+  float: right;
+  text-indent: 0;
 }
 
 .next-btn::before {
@@ -197,15 +210,166 @@ header .wrapper {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 48%;
-  right: 6%;
+  background-color: rgba(0,0,0,0.3);
   color: #fff;
   font-family: "FontAwesome";
   font-size: 20px;
-  transform: translate(0, -50%);
+  float: right;
+  text-indent: 0;
 }
 
+.welcome, .portfolio, .advertisers {
+  background-color: #F9F9F9;
+}
+
+.welcome-heading {
+  border-bottom: 2px dashed #E8e8e8;
+  padding: 25px 0px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.welcome-heading span, .forground-color {
+  color: #8EB537; 
+}
+
+.services {
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.icon {
+  width: 145px;
+  height: 145px;
+  border: 1px solid rgb(208, 207, 207);
+  border-radius: 50%;
+}
+
+.support, .availability, .design, .development {
+  width: 115px;
+  height: 115px;
+  border: 15px solid #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8EB540;
+}
+
+.support::before {
+  content: "\f1b8";
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 60px;
+  float: right;
+  text-indent: 0;
+}
+
+
+.availability::before {
+  content: "\f095";
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 60px;
+  float: right;
+  text-indent: 0;
+}
+
+.design::before {
+  content: "\f013";
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 60px;
+  float: right;
+  text-indent: 0;
+}
+
+.development::before {
+  content: "\f10b";
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 60px;
+  float: right;
+  text-indent: 0;
+}
+
+.block h3 {
+  padding-top: 10px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.block p {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.portfolio { padding: 20px 0px; }
+
+.portfolio-heading {
+  padding-left: 20px;
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+}
+
+.portfolio-heading::before {
+  content:"";
+  width: 100%;
+  margin: 0 auto;
+  border-top: 2px dashed #E8e8e8;
+  position: absolute; 
+  z-index: -1;
+  top: 50%; 
+  right: 0; 
+  bottom: 0;
+  left: 0;  
+}
+
+.bg-color { 
+  padding: 0px 15px;
+  background-color: #F9F9F9; 
+}
+
+.portfolio-cards {
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+
+.card {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
+}
+
+.card-details { padding: 12px 16px 12px 16px; }
+.card figure img { max-width: 186px; }
+
+.card-details h3 {
+  padding-bottom: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.card-details a {
+  padding: 3px 10px;
+  background-color: #8EB540;
+  color: #fff;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+.card-details p {
+  max-width: 160px;
+  padding-top: 8px;
+  font-size: 10px;
+  line-height: 1.3;
+}
 /*=================================
   main styling ends here
 =================================*/
