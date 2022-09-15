@@ -96,8 +96,8 @@ li {
 
 /* for wrapper */
 .wrapper {
-  max-width: 1360px;
-  width: 86%; 
+  max-width: 1366px;
+  width: 57%; 
   margin: 0 auto;
 }
 
@@ -105,7 +105,45 @@ li {
   Header styling starts here
 =================================*/
 
+header {
+  width: 100%;
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: #FBFBFB;
+}
 
+header .wrapper {
+  height:  90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-list {
+  padding: 16px 0px 0px 34px;
+  color: #2d2d2d;
+  font-size: 10px;
+  float: right;
+  text-transform: uppercase; 
+}
+
+.pull-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.pull-icon::after {
+  content: "\f02e";
+  padding-left: 8px;
+  color: #8EB537;
+  font-family: "FontAwesome";
+  font-size: 12px;
+}
 
 /*=================================
   Header styling ends here
@@ -115,7 +153,58 @@ li {
   main styling starts here
 =================================*/
 
+.banner-section .wrapper { 
+  width: 100%; 
+  position: relative;
+}
+ 
+.banner-img h2 {
+  max-width: 350px;
+  padding: 30px;
+  position: absolute;
+  top: 8%;
+  right: 19%;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.6;
+  text-align: center;
+}
 
+.prev-btn::before {
+  content: "\f053";
+  width: 37px;
+  height: 37px;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 48%;
+  left: 6%;
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  transform: translate(0, -50%);
+}
+
+.next-btn::before {
+  content: "\f054 ";
+  width: 37px;
+  height: 37px;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 48%;
+  right: 6%;
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 20px;
+  transform: translate(0, -50%);
+}
 
 /*=================================
   main styling ends here
