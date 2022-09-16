@@ -140,6 +140,8 @@ header .wrapper {
   text-transform: uppercase;
 }
 
+.pull-icon { color: #202020; }
+
 .pull-icon::after {
   content: "\f02e";
   padding-left: 8px;
