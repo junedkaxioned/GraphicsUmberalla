@@ -111,6 +111,7 @@ header {
   z-index: 999;
   top: 0;
   background-color: #FBFBFB;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
 }
 
 header .wrapper {
@@ -129,6 +130,8 @@ header .wrapper {
   text-transform: uppercase; 
 }
 
+.nav-list:hover { color: #8EB537; }
+
 .pull-btn {
   position: absolute;
   top: 0;
@@ -144,6 +147,11 @@ header .wrapper {
   font-family: "FontAwesome";
   font-size: 12px;
   text-indent: 0;
+}
+
+.pull-btn:hover {
+  transition: all 1.3s linear;
+  transform: scaleY(3);
 }
 
 /*=================================
@@ -171,7 +179,7 @@ header .wrapper {
   text-align: center;
 }
 
- .text-indent { text-indent: -9999px;}
+ .text-indent { text-indent: -9999px;} 
 
 .scroll-btn {
   width: 88%;
@@ -305,16 +313,17 @@ header .wrapper {
   font-size: 14px;
   text-transform: capitalize;
 }
-.portfolio { padding: 20px 0px; }
 
-.portfolio-heading {
+.portfolio { padding: 15px 0px; }
+
+.portfolio-heading, .advertisers-heading {
   padding-left: 20px;
   position: relative;
   z-index: 1;
-  font-size: 22px;
+  font-size: 20px;
 }
 
-.portfolio-heading::before {
+.portfolio-heading::before, .advertisers-heading::before {
   content:"";
   width: 100%;
   margin: 0 auto;
@@ -328,7 +337,7 @@ header .wrapper {
 }
 
 .bg-color { 
-  padding: 0px 15px;
+  padding: 0px 5px;
   background-color: #F9F9F9; 
 }
 
@@ -337,18 +346,55 @@ header .wrapper {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  flex: 1%;
   gap: 22px;
 }
 
 
 .card {
   display: flex;
+  flex: 1 1 45%;
   background-color: #fff;
   box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
 }
 
 .card-details { padding: 12px 16px 12px 16px; }
+.card figure { position: relative; }
 .card figure img { max-width: 186px; }
+
+.hover-icon {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  display: none;
+  transform: translate(0, -50%);
+}
+
+.search-icon::before{
+content: "\f002";
+width: 35px;
+height: 35px;
+border: 5px solid #868785;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #4498CA;
+color: #fff;
+font-family: "FontAwesome";
+float: right;
+text-indent: 0;
+}
+
+.card:hover figure img {
+  opacity: 80%;
+  transition: all 0.3s linear;
+}
+
+.card:hover .hover-icon {
+  display: block;
+  transition: all 0.5s linear;
+}
 
 .card-details h3 {
   padding-bottom: 5px;
@@ -364,12 +410,47 @@ header .wrapper {
   text-transform: capitalize;
 }
 
+.card-details a:hover {
+  color: #8EB537;
+  background-color: transparent;
+}
+
 .card-details p {
   max-width: 160px;
   padding-top: 8px;
   font-size: 10px;
   line-height: 1.3;
 }
+
+.advertisers-logo {
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-btn { padding-bottom: 40px; }
+
+.back-to-top {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8EB537;
+  float: right;
+}
+
+.back-to-top::before {
+  content: "\f106";
+  color: #FFF;
+  font-family: "FontAwesome";
+  font-size: 24px;
+  float: right;
+  text-indent: 0;
+}
+
 /*=================================
   main styling ends here
 =================================*/
@@ -377,6 +458,222 @@ header .wrapper {
 /*=================================
   footer styling starts here
 =================================*/ 
+.footer-details {
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.footer-details > li { width: 175px; }
+
+.footer-heading {
+  padding: 20px 0px 15px 0px ;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.follow { padding: 15px 0px 10px 0px; }
+
+.facebook::before {
+  content: "\f09a";
+  padding-right: 10px;
+  color: #DBDBDB;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  float: right;
+  text-indent: 0;
+}
+
+.facebook:hover::before {
+  color: #1877f2;
+  transition: all 0.3S linear;
+  transform: scale(1.5);
+}
+
+.twitter::before {
+  content: "\f099";
+  padding-right: 10px;
+  color: #DBDBDB;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  float: right;
+  text-indent: 0;
+}
+
+.twitter:hover::before {
+  color: #1da1f2;
+  transition: all 0.3S linear;
+  transform: scale(1.5);
+}
+
+.feed::before {
+  content: "\f09e";
+  padding-right: 10px;
+  color: #DBDBDB;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  float: right;
+  text-indent: 0;
+}
+
+.feed:hover::before {
+  color: #ff9900;
+  transition: all 0.3S linear;
+  transform: scale(1.5);
+}
+
+.vimo::before {
+  content: "\f27d";
+  padding-right: 10px;
+  color: #DBDBDB;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  float: right;
+  text-indent: 0;
+}
+
+.vimo:hover::before {
+  color: #1ab7ea;
+  transition: all 0.3S linear;
+  transform: scale(1.5);
+}
+
+.dribble::before {
+  content: "\f17d";
+  padding-right: 10px;
+  color: #DBDBDB;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  float: right;
+  text-indent: 0;
+}
+
+.dribble:hover::before {
+  color: #ea4c89;
+  transition: all 0.3S linear;
+  transform: scale(1.5);
+}
+
+.linkedin::before {
+  content: "\f0e1";
+  padding-right: 10px;
+  color: #DBDBDB;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  float: right;
+  text-indent: 0;
+}
+
+.linkedin:hover::before {
+  color: #0a66c2;
+  transition: all 0.3S linear;
+  transform: scale(1.5);
+}
+
+.archives {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-lists {
+  padding: 10px 0px;
+  border-bottom: 1px dashed #c4c4c4;
+}
+
+.archive-lists a { color: #202020;}
+.border-none { border: none; }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact li a {
+  padding-bottom: 0px;
+  display: flex;
+  align-items: center;
+  color: #202020;
+}
+
+.email::before {
+  content: "\f003";
+  padding-right: 10px;
+  color: #bababa;
+  font-family: "FontAwesome";
+  font-size: 20px;
+}
+
+.phone::before {
+  content: "\f095";
+  padding-right: 10px;
+  color: #bababa;
+  font-family: "FontAwesome";
+  font-size: 24px;
+}
+
+.mobile::before {
+  content: "\f10b";
+  padding-right: 15px;
+  color: #bababa;
+  font-family: "FontAwesome";
+  font-size: 28px;
+}
+
+.form-input {
+  max-width: 160px;
+  padding: 10px 0px 10px 10px;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid #bababa;
+  background-color: #FAFAFA;
+}
+
+.form-input::placeholder {
+  font-size: 10px;
+  color: #202020;
+}
+
+.subscribe-btn {
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: 1px solid #8EB540;
+  background-color: #8EB540;
+  color: #fff;
+  font-size: 10px;
+  float: right; 
+  text-transform: uppercase;
+}
+
+.subscribe-btn:hover {
+  border: 1px solid #8EB540;
+  background-color: transparent;
+  color: #8EB537;
+}
+
+.footer-menu {
+  width: 100%;
+  background-color: #202020;
+}
+
+.footer-menu .wrapper {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 10px;
+}
+
+.menu li a {
+  padding: 10px 5px 10px 0px;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+}
 
 
 
